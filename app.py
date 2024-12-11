@@ -14,9 +14,9 @@ def currenttime():
 
 def collectingtime():
     # Get the current time as a string
-    current_time_str = currenttime()
+    current_time_string = currenttime()
     # Convert the string back to a datetime object
-    current_time = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
+    current_time = datetime.strptime(current_time_string, "%Y-%m-%d %H:%M:%S")
     
     # Add 15 minutes to the current time
     time_to_add = timedelta(minutes=15)
