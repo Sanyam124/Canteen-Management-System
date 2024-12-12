@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ordersummary.css') }}">
     <title>Order Summary</title>
 </head>
 
@@ -14,6 +16,12 @@
         <h1>Order Summary</h1>
         <p>Please provide your valuable feedback</p>
     </header>
+    <nav class="navbar">
+        <a href="/index">Place Order</a>
+        <a href="#status-section">Order Status</a>
+        <a href="/about">About</a>
+        <a href="/all_orders">Your Orders</a>
+    </nav>
     <main>
         <div id="orderinfobox">
             <section>

@@ -1,0 +1,66 @@
+#orderinfobox {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  #canteenkitchen {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+    #orderinfobox,
+    #canteenkitchen {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    img {
+      max-width: 100%;
+    }
+  }
+  
+  /* Medium devices (tablets) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    #orderinfobox,
+    #canteenkitchen {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .section {
+      max-width: 90%;
+    }
+  
+    img {
+      max-width: 400px;
+    }
+  }
+  
+  /* Large devices (desktops) */
+  @media (min-width: 1025px) {
+    #orderinfobox,
+    #canteenkitchen {
+      justify-content: space-evenly;
+    }
+  }
+  

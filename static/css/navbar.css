@@ -1,0 +1,20 @@
+  /* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .navbar a {
+      margin: 0.5rem 0;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .navbar {
+      padding: 0.8rem;
+    }
+  }
