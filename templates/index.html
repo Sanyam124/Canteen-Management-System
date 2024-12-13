@@ -2,6 +2,10 @@
 
 {% block title %}Canteen Management{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
 {% block content %}
 <header class="header">
     <h1>Canteen Management System</h1>
@@ -34,6 +38,8 @@
             <option value="Idli Sambhar">Idli Sambhar</option>
             <option value="Chhole Bhature">Chhole Bhature</option>
         </select>
+        <br>
+        <br>
 
         <label for="orderquantity">Order Quantity:</label>
         <input type="text" id="orderquantity" name="orderquantity" placeholder="Order Quantity" required>
@@ -56,15 +62,18 @@
 
 <section id="status-section" class="section">
     <h2>Track Your Order</h2>
-    <input type="text" id="order-id" placeholder="Enter Order ID">
-    <button type="button">Check Status</button>
+    <form action="/all_orders">
+        <input type="text" id="order-id" placeholder="Enter Order ID">
+        <button type="submit">Check Status</button>
+    </form>
     <div id="status-result">
         <!-- Status updates will appear here -->
     </div>
 </section>
 
 <section id="about-section" class="section">
-    <h2>About Us</h2>
+    <h2>About Us <a style="font-size: small; border: 2px solid #007bff;color: #007bff; margin-left: 5px;" href="/about">For more...</a>
+    </h2>
     <p>Our canteen management system is designed to minimize wait times and enhance your dining experience. We ensure
         efficiency in order processing and collection, even during peak hours.</p>
 </section>

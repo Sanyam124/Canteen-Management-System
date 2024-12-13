@@ -2,6 +2,10 @@
 
 {% block title %}Order Summary{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ordersummary.css') }}">
+{% endblock %}
+
 {% block content %}
 <header class="header">
     <h1>Order Summary</h1>

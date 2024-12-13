@@ -1,0 +1,89 @@
+/* Profile Container */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: #f7f9fc; /* Soft gray background for the page */
+    padding: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #ffffff; /* White background for the card */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    padding: 20px 30px;
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Heading */
+.profile-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #343a40; /* Dark gray text */
+    text-align: center;
+    border-bottom: 2px solid #007bff; /* Accent border under the title */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Table Styles */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #343a40; /* Dark gray caption */
+}
+
+thead {
+    background-color: #007bff; /* Blue theme for table headers */
+    color: white; /* White text on blue */
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light gray borders */
+}
+
+td:hover {
+    background-color: #f1f1f1; /* Light gray hover effect */
+}
+
+td {
+    font-size: 0.95rem;
+    color: #555; /* Medium gray text for data cells */
+}
+
+th {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

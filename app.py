@@ -38,6 +38,12 @@ def sign_up():
     
     return render_template('sign_up.html')
 
+@app.route('/logout')
+def logout():
+    session.pop('username', None)  # Remove 'username' from session
+    flash("You have been logged out.", "success")  # Optional: show a logout message
+    return redirect(url_for('login'))  # Redirect to login page
+
 # Login Route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -157,6 +163,12 @@ def profile():
     # Fetch user details from the database
     cursor.execute("SELECT username, email, created_at FROM users WHERE username = %s", (username,))
     user = cursor.fetchone()  # This fetches a single row (as a tuple or dictionary)
+    if user:
+        user = {
+            'username': user[0],
+            'email': user[1],
+            'created_at': user[2].strftime('%Y-%m-%d %H:%M:%S') if user[2] else None
+        }
 
     return render_template('profile.html', user=user)
 
