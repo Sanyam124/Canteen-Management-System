@@ -1,91 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canteen Management</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-</head>
+{% block title %}Canteen Management{% endblock %}
 
-<body>
-  <header class="header">
+{% block content %}
+<header class="header">
     <h1>Canteen Management System</h1>
     <p>Streamline your canteen experience!</p>
-  </header>
-  <nav class="navbar">
-    <a href="/index">Place Order</a>
-    <a href="#status-section">Order Status</a>
-    <a href="/about">About</a>
-    <a href="/all_orders">Your Orders</a>
-  </nav>
-  <main>
-    <section id="order-section" class="section">
-      <h2>Place Your Order</h2>
-      <form action="/submit-order" method="POST">
+</header>
+
+<section id="order-section" class="section">
+    <h2>Place Your Order</h2>
+    <form action="/submit-order" method="POST">
         <label for="customername">Your Name:</label>
         <input type="text" id="customername" name="customername" placeholder="Enter your name" required>
 
         <label for="mobilenumber">Mobile Number:</label>
-        <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Enter yout Mobile Number" required>
+        <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Enter your Mobile Number" required>
 
         <label for="orderitem">Your Order:</label>
         <select id="orderitem" name="orderitem" required>
-          <option value="" disabled selected>Select your Order</option>
-          <option value="Paneer Butter Masala">Paneer Butter Masala</option>
-          <option value="Paneer Chilli">Paneer Chilli</option>
-          <option value="Dal Tadka">Dal Tadka</option>
-          <option value="Butter Naan">Butter Naan</option>
-          <option value="Veg Biryani">Veg Biryani</option>
-          <option value="Chicken Curry">Chicken Curry</option>
-          <option value="Fish Fry">Fish Fry</option>
-          <option value="Egg Biryani">Egg Biryani</option>
-          <option value="Tandoori Roti">Tandoori Roti</option>
-          <option value="Gulab Jamun">Gulab Jamun</option>
-          <option value="Masala Dosa">Masala Dosa</option>
-          <option value="Idli Sambhar">Idli Sambhar</option>
-          <option value="Chhole Bhature">Chhole Bhature</option>
+            <option value="" disabled selected>Select your Order</option>
+            <option value="Paneer Butter Masala">Paneer Butter Masala</option>
+            <option value="Paneer Chilli">Paneer Chilli</option>
+            <option value="Dal Tadka">Dal Tadka</option>
+            <option value="Butter Naan">Butter Naan</option>
+            <option value="Veg Biryani">Veg Biryani</option>
+            <option value="Chicken Curry">Chicken Curry</option>
+            <option value="Fish Fry">Fish Fry</option>
+            <option value="Egg Biryani">Egg Biryani</option>
+            <option value="Tandoori Roti">Tandoori Roti</option>
+            <option value="Gulab Jamun">Gulab Jamun</option>
+            <option value="Masala Dosa">Masala Dosa</option>
+            <option value="Idli Sambhar">Idli Sambhar</option>
+            <option value="Chhole Bhature">Chhole Bhature</option>
         </select>
-
 
         <label for="orderquantity">Order Quantity:</label>
         <input type="text" id="orderquantity" name="orderquantity" placeholder="Order Quantity" required>
 
         <label for="paymentmethod">Select Payment Method:</label>
         <select id="paymentmethod" name="paymentmethod" required>
-          <option value="" disabled selected>Select Payment Method</option>
-          <option value="Cash On Delivery">Cash On Delivery</option>
-          <option value="Online Payment (UPI)">Online Payment (UPI)</option>
-          <option value="Credit Card">Credit Card</option>
-          <option value="Debit Card">Debit Card</option>
-          <option value="Net Banking">Net Banking</option>
-          <option value="Wallet (Paytm/PhonePe)">Wallet (Paytm/PhonePe)</option>
+            <option value="" disabled selected>Select Payment Method</option>
+            <option value="Cash On Delivery">Cash On Delivery</option>
+            <option value="Online Payment (UPI)">Online Payment (UPI)</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Net Banking">Net Banking</option>
+            <option value="Wallet (Paytm/PhonePe)">Wallet (Paytm/PhonePe)</option>
         </select>
 
-        <br>
-        <br>
+        <br><br>
         <button type="submit">Submit Order</button>
-      </form>
-    </section>
-    <section id="status-section" class="section">
-      <h2>Track Your Order</h2>
-      <input type="text" id="order-id" placeholder="Enter Order ID">
-      <button type="button">Check Status</button>
-      <div id="status-result">
-        <!-- Status updates will appear here -->
-      </div>
-    </section>
-    <section id="about-section" class="section">
-      <h2>About Us</h2>
-      <p>Our canteen management system is designed to minimize wait times and enhance your dining experience. We ensure
-        efficiency in order processing and collection, even during peak hours.</p>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>&copy; 2024 Canteen Management. All rights reserved.</p>
-  </footer>
-</body>
+    </form>
+</section>
 
-</html>
+<section id="status-section" class="section">
+    <h2>Track Your Order</h2>
+    <input type="text" id="order-id" placeholder="Enter Order ID">
+    <button type="button">Check Status</button>
+    <div id="status-result">
+        <!-- Status updates will appear here -->
+    </div>
+</section>
+
+<section id="about-section" class="section">
+    <h2>About Us</h2>
+    <p>Our canteen management system is designed to minimize wait times and enhance your dining experience. We ensure
+        efficiency in order processing and collection, even during peak hours.</p>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2024 Canteen Management. All rights reserved.</p>
+</footer>
+{% endblock %}

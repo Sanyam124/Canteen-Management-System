@@ -1,61 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ordersummary.css') }}">
-    <title>Order Summary</title>
-</head>
+{% block title %}Order Summary{% endblock %}
 
-<body>
+{% block content %}
+<header class="header">
+    <h1>Order Summary</h1>
+    <p>Please provide your valuable feedback</p>
+</header>
 
-    <header class="header">
-        <h1>Order Summary</h1>
-        <p>Please provide your valuable feedback</p>
-    </header>
-    <nav class="navbar">
-        <a href="/index">Place Order</a>
-        <a href="#status-section">Order Status</a>
-        <a href="/about">About</a>
-        <a href="/all_orders">Your Orders</a>
-    </nav>
-    <main>
-        <div id="orderinfobox">
-            <section>
-                <h2>Your Name: {{OrderDetails.CustomerName}}</h2>
-                <label for="name"><strong>Your Order: </strong>{{OrderDetails.Order}}</label><br>
-                <label for="orderquantity"><strong>Order Quantity: </strong>{{OrderDetails.OrderQuantity}}</label><br>
-                <label for="mobilenumber"><strong>Mobile Number: </strong>{{OrderDetails.MobileNumber}}</label>
-
-            </section>
-            <div>
-                <h1>Token Number: {{OrderDetails.OrderId}}</h1>
-                <h2>Order Time: {{OrderDetails.OrderTime}}</h2>
-            </div>
+<main>
+    <div id="orderinfobox">
+        <section>
+            <h2>Your Name: {{OrderDetails.CustomerName}}</h2>
+            <label for="name"><strong>Your Order: </strong>{{OrderDetails.Order}}</label><br>
+            <label for="orderquantity"><strong>Order Quantity: </strong>{{OrderDetails.OrderQuantity}}</label><br>
+            <label for="mobilenumber"><strong>Mobile Number: </strong>{{OrderDetails.MobileNumber}}</label>
+        </section>
+        <div>
+            <h1>Token Number: {{OrderDetails.OrderId}}</h1>
+            <h2>Order Time: {{OrderDetails.OrderTime}}</h2>
         </div>
-        <hr style="height: 2px; background-color: black; width: 70%; margin: 10px auto;">
-        <div style="display: flex; justify-content: center;">
-            <h1 style="font-size: 4vh"><strong>Order Will Be Ready IN: <strong style="color: red;">15</strong>
-                    Minutes</strong></h1>
-        </div>
-        <div style="display: flex; justify-content: center;">
-            <h1 style="font-size: 3vh"><strong>Collecting Time: <strong
-                        style="color: red;">{{OrderDetails.CollectingTime}}</strong></strong></h1>
-        </div>
-        <hr style="height: 2px; background-color: black; width: 70%; margin: 10px auto;">
-        <div style="display: flex; justify-content: center;">
-            <h1 style="font-size: 3.5vh"><strong style="color: red;">Live </strong>Kitchen Video</h1>
-        </div>
-        <div id="canteenkitchen">
-            <img src="{{ url_for('static',filename='images/canteen-kitchen-1.jpg') }}" alt="Error Finding Images"
-                width="500">
-            <img src="{{ url_for('static',filename='images/canteen-kitchen-2.jpg') }}" alt="Error Finding Images"
-                width="500">
-        </div>
-    </main>
-</body>
-
-</html>
+    </div>
+    <hr style="height: 2px; background-color: black; width: 70%; margin: 10px auto;">
+    <div style="display: flex; justify-content: center;">
+        <h1 style="font-size: 4vh"><strong>Order Will Be Ready IN: <strong style="color: red;">15</strong>
+                Minutes</strong></h1>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <h1 style="font-size: 3vh"><strong>Collecting Time: <strong
+                    style="color: red;">{{OrderDetails.CollectingTime}}</strong></strong></h1>
+    </div>
+    <hr style="height: 2px; background-color: black; width: 70%; margin: 10px auto;">
+    <div style="display: flex; justify-content: center;">
+        <h1 style="font-size: 3.5vh"><strong style="color: red;">Live </strong>Kitchen Video</h1>
+    </div>
+    <div id="canteenkitchen">
+        <img src="{{ url_for('static',filename='images/canteen-kitchen-1.jpg') }}" alt="Error Finding Images" width="500">
+        <img src="{{ url_for('static',filename='images/canteen-kitchen-2.jpg') }}" alt="Error Finding Images" width="500">
+    </div>
+</main>
+{% endblock %}

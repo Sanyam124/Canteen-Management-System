@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile - Canteen Management</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-    <header class="header">
-        <h1>Canteen Management System</h1>
-    </header>
+{% extends "base.html" %}
 
-    <section class="section">
-        <h2>Your Profile</h2>
-        
-        <label for="username">Username  {{user[username]}}</label>
-        <label for="email">Email {{user[email]}}</label>
-        <label for="password">CREATED: {{user[created_at]}}</label>
+{% block title %}User Profile - Canteen Management{% endblock %}
 
-    </section>
+{% block content %}
+<section class="section">
+    <h2>Your Profile</h2>
 
-    <footer class="footer">
-        <p>&copy; 2024 Canteen Management</p>
-    </footer>
-</body>
-</html>
+    <label for="username">Username: {{ user['username'] }}</label><br>
+    <label for="email">Email: {{ user['email'] }}</label><br>
+    <label for="password">Created: {{ user['created_at'] }}</label><br>
+
+</section>
+{% endblock %}
