@@ -124,6 +124,11 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/ordersummary')
+def ordersummary():
+    # Assuming that OrderDetails has been set earlier, you can use session or another method to store it
+    OrderDetails = session.get('OrderDetails', None)
+    return render_template('ordersummary.html', OrderDetails=OrderDetails)
 @app.route('/submit-order', methods=["POST"])
 def ordersubmit():
     UserName=session['username']
@@ -151,6 +156,7 @@ def ordersubmit():
         'OrderTime': currenttime(),
         'CollectingTime': collectingtime()
     }
+    session['OrderDetails'] = OrderDetails  # Save it in session
     return render_template('ordersummary.html', OrderDetails=OrderDetails)
 
 # User Profile Route

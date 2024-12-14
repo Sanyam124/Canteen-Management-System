@@ -16,14 +16,14 @@
         <a href="/index">
             <i class="bi bi-bag-check"></i> Place Order
         </a>
-        <a href="/index#status-section">
-            <i class="bi bi-clock"></i> Order Status
+        <a href="{{ url_for('all_orders') }}">
+            <i class="bi bi-clock"></i>Order History
         </a>
         <a href="/about">
             <i class="bi bi-info-circle"></i> About
         </a>
-        <a href="/all_orders">
-            <i class="bi bi-list-ul"></i> Your Orders
+        <a href="{{ url_for('ordersummary') }}">
+            <i class="bi bi-basket"></i> Current Order
         </a>
         <a href="/profile">
             <i class="bi bi-person-circle"></i> Profile

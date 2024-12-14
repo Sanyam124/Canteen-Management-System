@@ -3,7 +3,7 @@
 {% block title %}Order Summary{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/ordersummary.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ordersummmary.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -13,6 +13,7 @@
 </header>
 
 <main>
+    {% if OrderDetails %}
     <div id="orderinfobox">
         <section>
             <h2>Your Name: {{OrderDetails.CustomerName}}</h2>
@@ -42,5 +43,15 @@
         <img src="{{ url_for('static',filename='images/canteen-kitchen-1.jpg') }}" alt="Error Finding Images" width="500">
         <img src="{{ url_for('static',filename='images/canteen-kitchen-2.jpg') }}" alt="Error Finding Images" width="500">
     </div>
+    {% else %}
+    <div id="order-not-available">
+        <div class="message-container">
+            <h1>Oops! Order Not Found</h1>
+            <p>It seems like you haven't placed an order yet.</p>
+            <a style="font-size: 1vw; border: 2px solid #007bff;color: #007bff; margin-left: 5px
+" href="/index" class="back-home-btn">Place Order Now.</a>
+        </div>
+    </div>
+    {% endif %}
 </main>
 {% endblock %}
